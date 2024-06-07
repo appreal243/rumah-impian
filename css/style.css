@@ -88,9 +88,31 @@ body {
     color: var(--text-color);
 }
 
+.navbar a {
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 0%; /* Panjang garis 80% dari lebar a */
+    height: 2px; /* Ketebalan garis */
+    background-color: var(--text-color); /* Warna garis */
+    transition: 0.3s ease;
+  }
+
+.navbar .active::after,
+.navbar a:hover::after {
+    width: 80%;
+}
+
 .button a {
     margin-left: 2rem;
 }
+
 
 /* Home Style */
 section {
@@ -131,6 +153,14 @@ section {
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+.cta a {
+    transition: .3s;
+}
+
+.cta:hover a {
+    transform: scale(1.04);
 }
 
 .home-content .cta a {
@@ -200,7 +230,7 @@ section {
     border-radius: 2rem;
     text-align: center;
     color: var(--second-text-color);
-    transition: background 0.3s ease, transform 0.3s;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
 .services-box:hover {
@@ -215,6 +245,10 @@ section {
     border-radius: 50%;
     font-size: 4.4rem;
     margin-bottom: 2rem;
+}
+
+.services-box i {
+    transition: 0.3s;
 }
 
 .services-box:hover i {
@@ -686,3 +720,19 @@ section.kontak {
     font-size: 2.4rem;
     color: var(--text-color);
   }
+
+
+
+  /* Breakpoint */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 992) {
+    html {
+        font-size: ;
+    }
+}
